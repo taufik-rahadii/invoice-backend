@@ -1,0 +1,133 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Permission {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  groupCode: String
+  title: String!
+  code: String!
+  availableActions: [String!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type RolePermission {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  roleId: String!
+  permissionCode: String!
+  actions: [String!]!
+  permissionDetail: Permission!
+}
+
+type Role {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  name: String!
+  permissions: [RolePermission!]
+}
+
+type User {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  firstname: String!
+  lastname: String
+  phone: String
+  email: String
+  roleId: String!
+  role: Role
+}
+
+type PaginationMetadataResponse {
+  limit: Int!
+  offset: Int!
+  search: String
+  total: Int!
+}
+
+type ListUserRes {
+  data: [User!]!
+  metadata: PaginationMetadataResponse!
+}
+
+type SignInRes {
+  userId: String!
+  accessToken: String!
+  refreshToken: String!
+}
+
+type Service {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  name: String
+}
+
+type ListServiceRes {
+  metadata: PaginationMetadataResponse!
+  data: [Service!]!
+}
+
+type Counter {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+  name: String!
+  service: Service!
+}
+
+type ListCounterRes {
+  data: [Counter!]!
+  metadata: PaginationMetadataResponse!
+}
+
+type Query {
+  listRoles: [Role!]!
+  listUser(pagination: PaginationArgs!): ListUserRes
+  detailUser(id: String!): User!
+  userProfile: User!
+  listService(pagination: PaginationArgs!): ListServiceRes!
+  listCounter(pagination: PaginationArgs!): ListCounterRes!
+  detailCounter(id: String!): Counter!
+}
+
+input PaginationArgs {
+  limit: Int = 10
+  offset: Int = 0
+  search: String
+}
+
+type Mutation {
+  createRole(name: String!, permissions: [CreateRolePermissions!]!): Role!
+  createUser(firstname: String!, lastname: String, phone: String, email: String, password: String, roleId: String!): User!
+  updateUser(id: String!, firstname: String!, lastname: String, phone: String, email: String, password: String, roleId: String!): User!
+  deleteUser(id: String!): Boolean!
+  signIn(email: String, phone: String, password: String!): SignInRes!
+  refreshSession: SignInRes!
+  createService(name: String!): Service!
+  updateService(id: String!, name: String!): Service!
+  deleteService(id: String!): Boolean!
+  createCounter(name: String!, serviceId: String!): Counter!
+  updateCounter(id: String!, name: String!, serviceId: String!): Counter!
+  deleteCounter(id: String!): Boolean!
+}
+
+input CreateRolePermissions {
+  code: String!
+  actions: [String!]!
+}
