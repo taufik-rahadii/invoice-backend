@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Permission } from '../entities/permission.entity';
-import * as Dataloader from 'dataloader';
+import Dataloader from 'dataloader';
 import { In, Repository } from 'typeorm';
 
 @Injectable()

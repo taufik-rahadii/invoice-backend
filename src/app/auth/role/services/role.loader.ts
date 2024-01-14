@@ -1,6 +1,6 @@
 import { Injectable, Scope } from '@nestjs/common';
 import { RoleService } from './role.service';
-import * as DataLoader from 'dataloader';
+import DataLoader from 'dataloader';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RolePermission } from '../entities/role-permission.entity';
 import { In, Repository } from 'typeorm';
