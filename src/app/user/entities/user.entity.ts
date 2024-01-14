@@ -1,8 +1,8 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 import { genSaltSync, hashSync } from 'bcrypt';
 import { isNotEmpty } from 'class-validator';
-import { Role } from 'src/app/auth/role/entities/role.entity';
-import { BaseEntityObj } from 'src/common/classes/base.entity';
+import { Role } from '../../auth/role/entities/role.entity';
+import { BaseEntityObj } from '../../../common/classes/base.entity';
 import { BeforeInsert, Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity()

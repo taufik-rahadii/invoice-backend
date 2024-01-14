@@ -10,14 +10,14 @@ import { Counter } from '../entities/counter.entity';
 import { CounterService } from '../services/counter.service';
 import { CreateCounterDto } from '../dtos/create-counter.dto';
 import { ListCounterRes } from '../dtos/list-counter.dto';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
-import { Service } from 'src/app/service/entities/service.entity';
-import { ServiceLoader } from 'src/app/service/services/service.loader';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
+import { Service } from '../../service/entities/service.entity';
+import { ServiceLoader } from '../../service/services/service.loader';
 import { UpdateCounterDto } from '../dtos/update-counter.dto';
 import { UseGuards } from '@nestjs/common';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { RoleGuard } from 'src/common/guards/role.guard';
-import { Permission } from 'src/common/decorators/permission.decorator';
+import { JwtGuard } from '../../../common/guards/jwt.guard';
+import { RoleGuard } from '../../../common/guards/role.guard';
+import { Permission } from '../../../common/decorators/permission.decorator';
 
 @Resolver(() => Counter)
 @UseGuards(JwtGuard, RoleGuard)

@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { BaseEntityObj } from 'src/common/classes/base.entity';
+import { BaseEntityObj } from '../../../../common/classes/base.entity';
 import { Column, Entity } from 'typeorm';
 import { Action } from '../../role/entities/role-permission.entity';
 
@@ -10,7 +10,7 @@ export class Permission extends BaseEntityObj {
     type: 'varchar',
     nullable: true,
   })
-  @Field(() => String, {nullable: true})
+  @Field(() => String, { nullable: true })
   groupCode?: string;
 
   @Column({

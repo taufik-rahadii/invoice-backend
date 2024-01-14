@@ -3,9 +3,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dtos/create-user.dto';
-import { ServiceBase } from 'src/common/base/service.base';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
-import { SelectOption } from 'src/common/base/types';
+import { ServiceBase } from '../../../common/base/service.base';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
+import { SelectOption } from '../../../common/base/types';
 
 @Injectable()
 export class UserService extends ServiceBase<User> {

@@ -1,13 +1,13 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Service } from '../entities/service.entity';
 import { ServiceService } from '../services/service.service';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
 import { ListServiceRes } from '../dtos/list-service.dto';
 import { CreateServiceDto } from '../dtos/create-service.dto';
 import { UseGuards } from '@nestjs/common';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { RoleGuard } from 'src/common/guards/role.guard';
-import { Permission } from 'src/common/decorators/permission.decorator';
+import { JwtGuard } from '../../../common/guards/jwt.guard';
+import { RoleGuard } from '../../../common/guards/role.guard';
+import { Permission } from '../../../common/decorators/permission.decorator';
 import { UpdateServiceDto } from '../dtos/update-service.dto';
 
 @Resolver(() => Service)

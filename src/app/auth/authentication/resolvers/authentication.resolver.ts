@@ -1,10 +1,6 @@
 import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
 import { SignInDto, SignInRes } from '../dtos/signin.dto';
 import { AuthenticationService } from '../services/authentication.service';
-import { Headers, UseGuards } from '@nestjs/common';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { UserInfo } from 'src/common/decorators/userinfo.decorator';
-import { User } from 'src/app/user/entities/user.entity';
 
 @Resolver()
 export class AuthenticationResolver {

@@ -2,10 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Counter } from '../entities/counter.entity';
 import { Repository } from 'typeorm';
-import { ServiceBase } from 'src/common/base/service.base';
+import { ServiceBase } from '../../../common/base/service.base';
 import { CreateCounterDto } from '../dtos/create-counter.dto';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
-import { SelectOption } from 'src/common/base/types';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
+import { SelectOption } from '../../../common/base/types';
 import { UpdateCounterDto } from '../dtos/update-counter.dto';
 
 @Injectable()

@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Service } from '../entities/service.entity';
-import { ServiceBase } from 'src/common/base/service.base';
-import { SelectOption } from 'src/common/base/types';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
+import { ServiceBase } from '../../../common/base/service.base';
+import { SelectOption } from '../../../common/base/types';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
 import { CreateServiceDto } from '../dtos/create-service.dto';
 import { UpdateServiceDto } from '../dtos/update-service.dto';
 

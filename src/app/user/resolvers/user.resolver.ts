@@ -8,14 +8,14 @@ import {
 } from '@nestjs/graphql';
 import { User } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
-import { Role } from 'src/app/auth/role/entities/role.entity';
-import { RoleLoader } from 'src/app/auth/role/services/role.loader';
+import { Role } from '../../../app/auth/role/entities/role.entity';
+import { RoleLoader } from '../../../app/auth/role/services/role.loader';
 import { CreateUserDto } from '../dtos/create-user.dto';
-import { PaginationArgs } from 'src/common/pagination/pagination.args';
+import { PaginationArgs } from '../../../common/pagination/pagination.args';
 import { ListUserRes } from '../dtos/list-user.dto';
 import { UseGuards } from '@nestjs/common';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { UserInfo } from 'src/common/decorators/userinfo.decorator';
+import { JwtGuard } from '../../../common/guards/jwt.guard';
+import { UserInfo } from '../../../common/decorators/userinfo.decorator';
 
 @Resolver((of) => User)
 export class UserResolver {

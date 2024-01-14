@@ -12,9 +12,9 @@ import { CreateRoleDto } from '../dtos/create-role.dto';
 import { RolePermission } from '../entities/role-permission.entity';
 import { RoleLoader } from '../services/role.loader';
 import { UseGuards } from '@nestjs/common';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { RoleGuard } from 'src/common/guards/role.guard';
-import { Permission } from 'src/common/decorators/permission.decorator';
+import { JwtGuard } from '../../../../common/guards/jwt.guard';
+import { RoleGuard } from '../../../../common/guards/role.guard';
+import { Permission } from '../../../../common/decorators/permission.decorator';
 
 @Resolver(() => Role)
 @UseGuards(JwtGuard, RoleGuard)

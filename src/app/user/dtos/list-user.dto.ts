@@ -1,4 +1,4 @@
-import { PaginationMetadataResponse } from 'src/common/pagination/pagination.response';
+import { PaginationMetadataResponse } from '../../../common/pagination/pagination.response';
 import { User } from '../entities/user.entity';
 import { Field, ObjectType } from '@nestjs/graphql';
 

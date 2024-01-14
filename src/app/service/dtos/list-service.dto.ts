@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { PaginationMetadataResponse } from 'src/common/pagination/pagination.response';
+import { PaginationMetadataResponse } from '../../../common/pagination/pagination.response';
 import { Service } from '../entities/service.entity';
 
 @ObjectType()

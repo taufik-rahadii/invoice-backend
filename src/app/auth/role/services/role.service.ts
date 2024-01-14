@@ -4,7 +4,7 @@ import { Role } from '../entities/role.entity';
 import { In, Repository } from 'typeorm';
 import { CreateRoleDto } from '../dtos/create-role.dto';
 import { RolePermission } from '../entities/role-permission.entity';
-import { ServiceBase } from 'src/common/base/service.base';
+import { ServiceBase } from '../../../../common/base/service.base';
 
 @Injectable()
 export class RoleService extends ServiceBase<Role> {
