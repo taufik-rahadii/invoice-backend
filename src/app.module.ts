@@ -16,6 +16,9 @@ import { AuthenticationModule } from './app/auth/authentication/authentication.m
 import { ServiceModule } from './app/service/service.module';
 import { CounterModule } from './app/counter/counter.module';
 import { QueueModule } from './app/queue/queue.module';
+import { RoleResolver } from './app/auth/role/resolvers/role.resolver';
+import { UserResolver } from './app/user/resolvers/user.resolver';
+import { AuthenticationResolver } from './app/auth/authentication/resolvers/authentication.resolver';
 
 @Module({
   imports: [
@@ -23,9 +26,10 @@ import { QueueModule } from './app/queue/queue.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       path: '/ql',
-      autoSchemaFile: join(process.cwd(), `src/schema.gql`),
+      autoSchemaFile: false,
       context: ({ req }: { req: Request }) => req,
       playground: true,
+      typePaths: ['./**/*.gql'],
     }),
 
     SentryModule.forRootAsync({

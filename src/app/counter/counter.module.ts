@@ -8,6 +8,6 @@ import { ServiceModule } from '../service/service.module';
 @Module({
   imports: [TypeOrmModule.forFeature([Counter]), ServiceModule],
   providers: [CounterService, CounterResolver],
-  exports: [CounterService, TypeOrmModule],
+  exports: [CounterService, TypeOrmModule, CounterResolver],
 })
 export class CounterModule {}

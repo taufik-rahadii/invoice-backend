@@ -10,6 +10,6 @@ import { RolePermissionResolver } from './resolvers/role-permission.resolver';
 @Module({
   imports: [TypeOrmModule.forFeature([Role, RolePermission]), PermissionModule],
   providers: [RoleService, RoleResolver, RolePermissionResolver],
-  exports: [RoleService],
+  exports: [RoleService, RoleResolver],
 })
 export class RoleModule {}

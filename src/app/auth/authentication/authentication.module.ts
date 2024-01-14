@@ -22,6 +22,6 @@ import { JwtStrategy } from '../../../common/guards/strategies/jwt.strategy';
     }),
   ],
   providers: [AuthenticationService, AuthenticationResolver, JwtStrategy],
-  exports: [AuthenticationService, JwtStrategy],
+  exports: [AuthenticationService, JwtStrategy, AuthenticationResolver],
 })
 export class AuthenticationModule {}

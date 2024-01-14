@@ -8,6 +8,6 @@ import { ServiceResolver } from './resolvers/service.resolver';
 @Module({
   imports: [TypeOrmModule.forFeature([Service])],
   providers: [ServiceService, ServiceResolver],
-  exports: [ServiceService],
+  exports: [ServiceService, ServiceResolver],
 })
 export class ServiceModule {}
