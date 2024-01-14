@@ -23,14 +23,14 @@ import { AuthenticationResolver } from './app/auth/authentication/resolvers/auth
 @Module({
   imports: [
     // GraphQL Initiate
-    GraphQLModule.forRoot<ApolloDriverConfig>({
-      driver: ApolloDriver,
-      path: '/ql',
-      autoSchemaFile: false,
-      context: ({ req }: { req: Request }) => req,
-      playground: true,
-      typePaths: ['./**/*.gql'],
-    }),
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    //   path: '/ql',
+    //   autoSchemaFile: false,
+    //   context: ({ req }: { req: Request }) => req,
+    //   playground: true,
+    //   typePaths: ['./**/*.gql'],
+    // }),
 
     SentryModule.forRootAsync({
       imports: [ConfigModule],
