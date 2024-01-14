@@ -15,6 +15,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         database: env.get<string>('DB_NAME'),
         synchronize: env.get<boolean>('DB_SYNC'),
         logging: env.get<boolean>('DB_LOGGING') ? ['query'] : [],
+        schema: env.get<string>('DB_SCHEMA') ?? 'public',
         autoLoadEntities: true,
       }),
       inject: [ConfigService],
