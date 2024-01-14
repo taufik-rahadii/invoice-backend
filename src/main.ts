@@ -27,7 +27,7 @@ async function bootstrap() {
   const configService = app.get<ConfigService>(ConfigService);
 
   const appName = configService.get<string>('APP_NAME') ?? 'APP';
-  const port = configService.get<number>('APP_PORT') ?? 8000;
+  const port = configService.get<number>('PORT') ?? 3000;
 
   app.useGlobalPipes(
     new ValidationPipe({
