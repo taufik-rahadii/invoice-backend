@@ -12,7 +12,7 @@ import { CreateCounterDto } from '../dtos/create-counter.dto';
 import { ListCounterRes } from '../dtos/list-counter.dto';
 import { PaginationArgs } from '../../../common/pagination/pagination.args';
 import { Service } from '../../service/entities/service.entity';
-import { ServiceLoader } from '../../service/services/service.loader';
+// import { ServiceLoader } from '../../service/services/service.loader';
 import { UpdateCounterDto } from '../dtos/update-counter.dto';
 import { UseGuards } from '@nestjs/common';
 import { JwtGuard } from '../../../common/guards/jwt.guard';
@@ -24,7 +24,7 @@ import { Permission } from '../../../common/decorators/permission.decorator';
 export class CounterResolver {
   constructor(
     private readonly service: CounterService,
-    private readonly serviceLoader: ServiceLoader,
+    // private readonly serviceLoader: ServiceLoader,
   ) {}
 
   @Query(() => ListCounterRes)
@@ -63,8 +63,8 @@ export class CounterResolver {
     return this.service.deleteItem(id);
   }
 
-  @ResolveField(() => Service, { name: 'service' })
-  getService(@Parent() counter: Counter) {
-    return this.serviceLoader.singleService.load(counter.serviceId);
-  }
+  // @ResolveField(() => Service, { name: 'service' })
+  // getService(@Parent() counter: Counter) {
+  //   return this.serviceLoader.singleService.load(counter.serviceId);
+  // }
 }

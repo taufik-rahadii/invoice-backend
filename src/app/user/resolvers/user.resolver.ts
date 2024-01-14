@@ -9,7 +9,7 @@ import {
 import { User } from '../entities/user.entity';
 import { UserService } from '../services/user.service';
 import { Role } from '../../../app/auth/role/entities/role.entity';
-import { RoleLoader } from '../../../app/auth/role/services/role.loader';
+// import { RoleLoader } from '../../../app/auth/role/services/role.loader';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import { PaginationArgs } from '../../../common/pagination/pagination.args';
 import { ListUserRes } from '../dtos/list-user.dto';
@@ -21,7 +21,7 @@ import { UserInfo } from '../../../common/decorators/userinfo.decorator';
 export class UserResolver {
   constructor(
     private readonly userService: UserService,
-    private readonly roleLoader: RoleLoader,
+    // private readonly roleLoader: RoleLoader,
   ) {}
 
   // list user
@@ -67,10 +67,10 @@ export class UserResolver {
   }
 
   // resolver role
-  @ResolveField(() => Role, { nullable: true })
-  role(@Parent() user: User) {
-    const { roleId } = user;
+  // @ResolveField(() => Role, { nullable: true })
+  // role(@Parent() user: User) {
+  //   const { roleId } = user;
 
-    return this.roleLoader.batchRoles.load(roleId);
-  }
+  //   return this.roleLoader.batchRoles.load(roleId);
+  // }
 }

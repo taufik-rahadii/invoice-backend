@@ -10,7 +10,6 @@ import { Role } from '../entities/role.entity';
 import { RoleService } from '../services/role.service';
 import { CreateRoleDto } from '../dtos/create-role.dto';
 import { RolePermission } from '../entities/role-permission.entity';
-import { RoleLoader } from '../services/role.loader';
 import { UseGuards } from '@nestjs/common';
 import { JwtGuard } from '../../../../common/guards/jwt.guard';
 import { RoleGuard } from '../../../../common/guards/role.guard';
@@ -21,7 +20,7 @@ import { Permission } from '../../../../common/decorators/permission.decorator';
 export class RoleResolver {
   constructor(
     private readonly roleService: RoleService,
-    private readonly roleLoader: RoleLoader,
+    // private readonly roleLoader: RoleLoader,
   ) {}
 
   @Mutation(() => Role)
@@ -37,10 +36,10 @@ export class RoleResolver {
   }
 
   //   Role Permission Resolver
-  @ResolveField(() => [RolePermission], { nullable: true })
-  permissions(@Parent() role: Role) {
-    const { id } = role;
+  // @ResolveField(() => [RolePermission], { nullable: true })
+  // permissions(@Parent() role: Role) {
+  //   const { id } = role;
 
-    return this.roleLoader.batchPermissions.load(id);
-  }
+  //   return this.roleLoader.batchPermissions.load(id);
+  // }
 }
