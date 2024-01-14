@@ -7,11 +7,7 @@ import { join } from 'path';
 import { UserModule } from './app/user/user.module';
 import { RoleModule } from './app/auth/role/role.module';
 import { PermissionModule } from './app/auth/permission/permission.module';
-import {
-  GraphqlInterceptor,
-  SentryInterceptor,
-  SentryModule,
-} from '@ntegral/nestjs-sentry';
+import { GraphqlInterceptor, SentryModule } from '@ntegral/nestjs-sentry';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import * as Sentry from '@sentry/node';
@@ -19,6 +15,7 @@ import * as pg from 'pg';
 import { AuthenticationModule } from './app/auth/authentication/authentication.module';
 import { ServiceModule } from './app/service/service.module';
 import { CounterModule } from './app/counter/counter.module';
+import { QueueModule } from './app/queue/queue.module';
 
 @Module({
   imports: [
@@ -55,6 +52,7 @@ import { CounterModule } from './app/counter/counter.module';
     AuthenticationModule,
     ServiceModule,
     CounterModule,
+    QueueModule,
   ],
   providers: [
     {
